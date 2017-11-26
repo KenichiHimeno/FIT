@@ -472,6 +472,7 @@ train <- function(expression, attribute, weather, recipe, weight = NULL, min.exp
 
   names(models) <- genes # should be unnecessary, but for document purpose..
   models
+  print(models)
 }
 
 ################################
