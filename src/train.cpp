@@ -23,7 +23,7 @@ using prep::Es;
 // XXX: at the moment, assumes that envs is a list of singletons
 
 ////////////////////////////////////////////////////////////////
-// DOC
+// DOC changed by himeno
 //
 // Interface: Communicates with the calling R process by names
 // - Following names are a part of our protocol:
