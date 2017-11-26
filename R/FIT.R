@@ -830,3 +830,4 @@ load.weight <- function(path, variable = NULL, entries = NULL)
   IO$Weights$new(path, variable, entries)
 
 
+print ("changed by himeno")
