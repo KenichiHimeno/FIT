@@ -128,7 +128,9 @@ Model$LogNormal <- setRefClass(
                            normalize.attribute(attribute.data),
                            normalize.weather(weather.data),
                            data.step, time.step)
+        print(input)
         as.vector(input %*% coefs)
+        
       }
     },
 
