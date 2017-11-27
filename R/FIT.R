@@ -471,7 +471,7 @@ train <- function(expression, attribute, weather, recipe, weight = NULL, min.exp
   cat('# Done (training)\n')
 
   names(models) <- genes # should be unnecessary, but for document purpose..
-
+  models
 }
 
 ################################

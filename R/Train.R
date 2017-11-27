@@ -362,6 +362,7 @@ Train$fitLasso <- function(params, env, expr, weight, attribute.data, weather.da
   weight.sq <- sqrt(weight)
   expr.weighted <- weight.sq * expr
   inputs <- inputVars(params, env, attribute.data, weather.data, data.step, time.step)[, -1]
+  print(inputs)
   inputs.weighted <- diag(weight.sq) %*% inputs
   
   # prepare 
