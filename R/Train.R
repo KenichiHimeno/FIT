@@ -245,6 +245,7 @@ Train$optim <- function(exprs, weights, attribute.data, weather.data, models, me
       input.sd <- rep(1, length(names.coefs))
       
       m <- Model$new(g, e, time.step, log, params, var.exprs[[g]], coefs, response.type, input.mean, input.sd)
+      save(m,file="mmmm.RData")
     } else {
       e      <- best.envs[[g]]
       cur    <- models[[g]][[e]]
