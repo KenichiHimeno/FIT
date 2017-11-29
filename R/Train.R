@@ -21,6 +21,7 @@
 # returns a list (length genes.n) of lists (lengths envs.n) of models
 # - both lists should be named
 
+
 Train$init <- function(exprs, weights, attribute.data, weather.data,
                        envs, method, init.data, data.step, time.step) {
   genes <- colnames(exprs)
@@ -362,9 +363,19 @@ Train$fitLasso <- function(params, env, expr, weight, attribute.data, weather.da
   # weight
   weight.sq <- sqrt(weight)
   expr.weighted <- weight.sq * expr
-  inputs <- inputVars(params, env, attribute.data, weather.data, data.step, time.step)[, -1]
-  write.csv(inputs, "inutfotFIT.csv", quote = False,row.names=False)
+  inputs <- inputVars(params, env, attribute.data, weather.data, data.step, time.step)[, -1]  
+  print(is.matrix(inputs))
+  print(is.array(inputs))
+  print(is.list(inputs))
+  print(is.data.frame(inputs))
+  print(is.factor(inputs))
+  print(is.ordered(inputs))
+  cat("add save and is")  
   print(inputs)
+  save(inputs, file="inputforFIT.Rdata")
+  write.csv(inputs, "inputforFITverWritecsv.csv", quote = False,row.names=False)
+  write(inputs,"inputforFITverWrite.csv")
+  write.table(inputs, file="inputforFITverWritetable.csv")  
   inputs.weighted <- diag(weight.sq) %*% inputs
   
   # prepare 
