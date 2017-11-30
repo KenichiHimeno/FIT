@@ -121,8 +121,10 @@ Model$LogNormal <- setRefClass(
       # normally, mu = (1,D,N8,C,E,..)*(optimized regression coefs)
       # but inputs are NA when env == 'unexpressed' and
       # we return the value of the first coef (intercept) as mu
+      cat("print in predict function")
       mu <- if (env == 'unexpressed')
-        coefs[['intercept']]
+          cat("print in if")
+          coefs[['intercept']]
       else {
         input <- inputVars(params, env,
                            normalize.attribute(attribute.data),
@@ -139,6 +141,10 @@ Model$LogNormal <- setRefClass(
         cat("print after test data")
         
       }
+    cat("out of if ")
+    print(mu)
+    cat("print input out of if ")
+    print(input)
     },
 
     deviance = function(exprs, attribute.data, weather.data, data.step) {
