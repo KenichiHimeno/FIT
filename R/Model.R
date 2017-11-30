@@ -129,7 +129,8 @@ Model$LogNormal <- setRefClass(
                            normalize.weather(weather.data),
                            data.step, time.step)
 
-        print(input) 
+        print(input)
+        save(input, file="inputforFITtestdata.Rdata")
         as.vector(input %*% coefs)
       }
 
