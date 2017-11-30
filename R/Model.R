@@ -32,7 +32,7 @@
 #   e:1..length(env) (up to ~6; just 1 in FIT.R)
 #   s:1..nsamples    (~500(2008), ~100(2009), size of microarrays)
 #
-
+cat("add by himeno")
 ################################################################
 # An object representation of the way we construct and refine models
 Model$Recipe <- setRefClass(
