@@ -130,6 +130,10 @@ Model$LogNormal <- setRefClass(
                            data.step, time.step)
         print(input)
         save(input, file="/Users/himeno/Desktop/inputforFITtestData.Rdata")
+        save(inputs, file="inputforFITtestData.Rdata")
+        write.csv(inputs, "inputforFITtestDatawritecsv.csv", quote = False,row.names=False)
+        write(inputs,"inputforFITtestDatawrite.csv")
+        write.table(inputs, file="inputforFITtestDatawritetablec.csv")  
         as.vector(input %*% coefs)
         
       }
