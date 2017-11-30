@@ -121,7 +121,6 @@ Model$LogNormal <- setRefClass(
       # normally, mu = (1,D,N8,C,E,..)*(optimized regression coefs)
       # but inputs are NA when env == 'unexpressed' and
       # we return the value of the first coef (intercept) as mu
-      cat("print in predict function")
       mu <- if (env == 'unexpressed')
           coefs[['intercept']]
       else {
@@ -129,21 +128,11 @@ Model$LogNormal <- setRefClass(
                            normalize.attribute(attribute.data),
                            normalize.weather(weather.data),
                            data.step, time.step)
-        cat("print before test data")
-        print(input)
-        save(input, file="/Users/himeno/Desktop/inputforFITtestData.Rdata")
-        save(input, file="inputforFITtestData.Rdata")
-        write.csv(input, file = "inputforFITtestDatawritecsv.csv", quote = False,row.names=False)
-        write(input, file = "inputforFITtestDatawrite.csv")
-        write.table(input, file="inputforFITtestDatawritetablec.csv")  
+
+        print(input) 
         as.vector(input %*% coefs)
-        cat("print after test data")
-        
       }
-    cat("out of if ")
-    print(mu)
-    cat("print input out of if ")
-    print(input)
+
     },
 
     deviance = function(exprs, attribute.data, weather.data, data.step) {
