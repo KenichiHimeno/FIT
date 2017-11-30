@@ -123,7 +123,6 @@ Model$LogNormal <- setRefClass(
       # we return the value of the first coef (intercept) as mu
       cat("print in predict function")
       mu <- if (env == 'unexpressed')
-          cat("print in if")
           coefs[['intercept']]
       else {
         input <- inputVars(params, env,
