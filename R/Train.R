@@ -372,10 +372,7 @@ Train$fitLasso <- function(params, env, expr, weight, attribute.data, weather.da
   print(is.ordered(inputs))
   cat("add save and is")  
   print(inputs)
-  save(inputs, file="inputforFIT.Rdata")
-  write.csv(inputs, "inputforFITverWritecsv.csv", quote = False,row.names=False)
-  write(inputs,"inputforFITverWrite.csv")
-  write.table(inputs, file="inputforFITverWritetable.csv")  
+  save(inputs, file="inputforFIT.Rdata")  
   inputs.weighted <- diag(weight.sq) %*% inputs
   
   # prepare 
