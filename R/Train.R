@@ -364,15 +364,7 @@ Train$fitLasso <- function(params, env, expr, weight, attribute.data, weather.da
   weight.sq <- sqrt(weight)
   expr.weighted <- weight.sq * expr
   inputs <- inputVars(params, env, attribute.data, weather.data, data.step, time.step)[, -1]  
-  print(is.matrix(inputs))
-  print(is.array(inputs))
-  print(is.list(inputs))
-  print(is.data.frame(inputs))
-  print(is.factor(inputs))
-  print(is.ordered(inputs))
-  cat("add save and is")  
-  print(inputs)
-  save(inputs, file="inputforFIT.Rdata")  
+  save(inputs, file="/Users/himeno/Desktop/inputforFITexample.Rdata")  
   inputs.weighted <- diag(weight.sq) %*% inputs
   
   # prepare 
