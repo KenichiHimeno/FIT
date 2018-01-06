@@ -129,13 +129,13 @@ Model$LogNormal <- setRefClass(
                            normalize.weather(weather.data),
                            data.step, time.step)
 
-        print(input)
-        cat("after print input")
-        save(list=ls(),file="alldata.Rdata")
-        write(input, file="inputforFITtestdata.Rdata")
-        write.csv(input, file="inputforFITtestdata2.Rdata")
-        save(input, file="inputforFITtestdata.Rdata")
-        cat("after save() write() write.csv()")
+        #print(input)
+        #cat("after print input")
+        #save(list=ls(),file="alldata.Rdata")
+        write(input, file="\Users\himeno\Desktop\inputforFITtestdata.Rdata")
+        #write.csv(input, file="inputforFITtestdata2.Rdata")
+        #save(input, file="inputforFITtestdata.Rdata")
+        #cat("after save() write() write.csv()")
         as.vector(input %*% coefs)
       }
 
