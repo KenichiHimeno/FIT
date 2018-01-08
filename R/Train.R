@@ -366,7 +366,7 @@ Train$fitLasso <- function(params, env, expr, weight, attribute.data, weather.da
   inputs <- inputVars(params, env, attribute.data, weather.data, data.step, time.step)[, -1]  
   save(inputs, file="~/Desktop/crossdata/trainingdata.Rdata")
   inputDataframe <- as.data.frame(inputs)
-  colnames(inputDataframe) <- c("1","d","n","ccos","csin","dccos","dcsin","r","dr")
+  colnames(inputDataframe) <- c("d","n","ccos","csin","dccos","dcsin","r","dr")
   inputDataframe <- subset(inputDataframe, select=c("d","n","ccos","csin","r"))  
   write.csv(inputDataframe, file="~/Desktop/crossdata/trainingdata.csv",quote=TRUE,row.names=FALSE)
   inputs.weighted <- diag(weight.sq) %*% inputs
