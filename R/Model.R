@@ -136,7 +136,7 @@ Model$LogNormal <- setRefClass(
         inputDataframe <- as.data.frame(input)
         colnames(inputDataframe) <- c("1","d","n","ccos","csin","dccos","dcsin","r","dr")
         inputDataframe <- subset(inputDataframe, select=c("d","n","ccos","csin","r"))
-        write.csv(inputDataframe, file="~/Desktop/crossdata/testdata.csv",quote)=TRUE,row.names=FALSE)
+        write.csv(inputDataframe, file="~/Desktop/crossdata/testdata.csv",quote=TRUE,row.names=FALSE)
         #save(input, file="inputforFITtestdata.Rdata")
         #cat("after save() write() write.csv()")
         as.vector(input %*% coefs)
