@@ -366,7 +366,7 @@ Train$fitLasso <- function(params, env, expr, weight, attribute.data, weather.da
   inputs <- inputVars(params, env, attribute.data, weather.data, data.step, time.step)[, -1]  
   save(inputs, file="~/Desktop/crossdata/trainingdata.Rdata")
   inputDataframe <- as.data.frame(inputs)
-  print (dim(inputDataframe))
+
   colnames(inputDataframe) <- c("d","n","ccos","csin","dccos","dcsin","r","dr")
   write.csv(inputDataframe, file="~/Desktop/crossdata/trainingtryalldata.csv",quote=TRUE,row.names=FALSE)  
   inputDataframe <- subset(inputDataframe, select=c("d","n","ccos","csin","r"))  

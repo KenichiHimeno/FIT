@@ -134,7 +134,7 @@ Model$LogNormal <- setRefClass(
         #save(list=ls(),file="alldata.Rdata")
         write(input, file="~/Desktop/crossdata/inputforFITtestdata.Rdata")
         inputDataframe <- as.data.frame(input)
-        colnames(inputDataframe) <- c("d","n","ccos","csin","dccos","dcsin","r","dr")
+        colnames(inputDataframe) <- c("one","d","n","ccos","csin","dccos","dcsin","r","dr")
         write.csv(inputDataframe, file="~/Desktop/crossdata/testtryalldata.csv",quote=TRUE,row.names=FALSE)
         inputDataframe <- subset(inputDataframe, select=c("d","n","ccos","csin","r"))
         write.csv(inputDataframe, file="~/Desktop/crossdata/testdata.csv",quote=TRUE,row.names=FALSE)
