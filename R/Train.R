@@ -372,6 +372,7 @@ Train$fitLasso <- function(params, env, expr, weight, attribute.data, weather.da
   inputDataframe <- subset(inputDataframe, select=c("d","n","ccos","csin","r"))  
   write.csv(inputDataframe, file="~/Desktop/crossdata/trainingtrysubdata.csv",quote=TRUE,row.names=FALSE)
   inputs.weighted <- diag(weight.sq) %*% inputs
+  print(diag(weight.sq))  
   write.csv(inputs.weighted, file="~/Desktop/crossdata/inputsWeight.csv",quote=TRUE,row.names=FALSE)
   # prepare 
   group.index <- c(1, 2, 3, 3, 4, 4, 5:(ncol(inputs)-2))
