@@ -404,6 +404,7 @@ Train$fitLasso <- function(params, env, expr, weight, attribute.data, weather.da
     active.set <- which(coefficients[, i] != 0)
     if(length(active.set)>0){
       inputs.inv <- MASS::ginv(t(inputs.weighted[, active.set])%*%inputs.weighted[, active.set])
+      print(inputs.inv)  
       for(j in 1:sample.n){
         chi <- 
           inputs.inv + inputs.inv %*% inputs.weighted[j, active.set] %*% t(inputs.weighted[j, active.set]) %*% inputs.inv / 
@@ -432,6 +433,7 @@ Train$fitLasso <- function(params, env, expr, weight, attribute.data, weather.da
 
 # Note: does not name the coefs
 Train$coefsLasso <- function(fit, env) {
+  print (fit)
   coefs <- fit$coefs
   names(coefs) <- Model$coef.names(env)
   coefs
