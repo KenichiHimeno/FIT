@@ -395,9 +395,10 @@ Train$fitLasso <- function(params, env, expr, weight, attribute.data, weather.da
   intercepts <- mean(expr) - colMeans(inputs)%*%coefficients
   
   lambda <- fit$lambda
-
   lambda.n <- length(lambda)
+  print(lambda.n)  
   sample.n <- nrow(inputs)
+  print(sample.n)  
   errors <- matrix(0, sample.n, lambda.n)
   for(i in 1:lambda.n){
     active.set <- which(coefficients[, i] != 0)
